@@ -48,12 +48,12 @@ if(isset($_POST['btnRegister'])){
         include_once('connection.php');
         $pass = md5($pass1);
         $sq = "SELECT * from customer where Username ='$us' or email = '$email'";
-        $res = mysqli_query($conn,$sq);
-        if(mysqli_num_rows($res)==0)
+        $res = pg_query($conn,$sq);
+        if(pg_num_rows($res)==0)
         {
-            mysqli_query($conn,"INSERT INTO customer (UserName, Password, CustName, gender, Address, telephone, email, CusDate, CusMonth, CusYear, SSN, ActiveCode, state)
+            pg_query($conn,"INSERT INTO customer (UserName, Password, CustName, gender, Address, telephone, email, CusDate, CusMonth, CusYear, SSN, ActiveCode, state)
             VALUE ('$us', '$pass', '$fullname', $sex, '$address', '$tel', '$email',
-            $date, $month, $year, '', '', 0)") or die(mysqli_error($conn));
+            $date, $month, $year, '', '', 0)") or die(pg_result_error($conn));
             echo "You have registered successfully";
         }
         else
