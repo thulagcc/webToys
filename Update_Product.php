@@ -9,7 +9,7 @@
 		$result = pg_query($conn, $sqlstring);
 		echo "<select name='CategoryList' class='form-control'>
 					<option value='0'>Choose category</option>";
-		while ($row = pg_fetch_array($result, MYSQLI_ASSOC)) {
+		while ($row = pg_fetch_array($result)) {
 			if ($row['Cat_ID'] == $selectValue) {
 				echo "<option value='" . $row['Cat_ID'] . "' selected>" . $row['Cat_Name'] . "</option>";
 			} else {
@@ -23,7 +23,7 @@
 		$sqlstring = "SELECT Product_Name, Price, SmallDesc, DetailDesc, ProDate, Pro_qty, Pro_image, Cat_ID
 						FROM product WHERE Product_ID = '$id'";
 		$result = pg_query($conn, $sqlstring);
-		$row = pg_fetch_array($result, MYSQLI_ASSOC);
+		$row = pg_fetch_array($result);
 
 		$proname = $row["Product_Name"];
 		$short = $row["SmallDesc"];

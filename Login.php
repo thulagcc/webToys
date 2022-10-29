@@ -11,7 +11,7 @@
 	{
 		$us = $_POST['txtUsername'];
 		$pa = $_POST['txtPass'];
-		$us = mysqli_real_escape_string($conn, $us);
+		$us = pg_escape_string($conn, $us);
 
 		$err = "";
 		if($us=="")
@@ -34,7 +34,7 @@
 			$pass = md5($pa);
 			$res = pg_query($conn, "SELECT Username, Password, state FROM Customer WHERE Username = '$us' AND Password = '$pass'")
 			or die(pg_result_error($conn));
-			$row = pg_fetch_array($res,MYSQLI_ASSOC);
+			$row = pg_fetch_array($res);
 			if(pg_num_rows($res)==1)
 			{
 				$_SESSION["us"] = $us;

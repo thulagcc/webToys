@@ -7,7 +7,7 @@
 		if (isset($_GET["id"])) {
 			$id = $_GET["id"];
 			$result = pg_query($conn, "SELECT * FROM category WHERE Cat_ID = '$id'");
-			$row = pg_fetch_array($result, MYSQLI_ASSOC);
+			$row = pg_fetch_array($result);
 			$cat_id = $row["Cat_ID"];
 			$cat_name = $row["Cat_Name"];
 			$cat_des = $row["Cat_Des"];

@@ -6,10 +6,10 @@
 	function bind_Category_List($conn)
 	{
 		$sqlstring = "SELECT Cat_ID, Cat_Name from category";
-		$result = mysqli_query($conn, $sqlstring);
+		$result = pg_query($conn, $sqlstring);
 		echo "<select name='CategoryList' class='form-control'>
 					<option value='0'>Choose category</option>";
-		while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+		while ($row = pg_fetch_array($result)) {
 			echo "<option value='" . $row['Cat_ID'] . "'>" . $row['Cat_Name'] . "</option>";
 		}
 		echo "</select>";

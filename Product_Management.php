@@ -67,7 +67,7 @@
                 $result = pg_query($conn, "SELECT Product_ID, Product_Name, Price, Pro_qty, Pro_image, Cat_Name FROM product a, category b
                 WHERE a.Cat_ID = b.Cat_ID");
 
-                while($row = pg_fetch_array($result, MYSQLI_ASSOC))
+                while($row = pg_fetch_array($result))
                 {
 			?>
 			<tr>
