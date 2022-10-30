@@ -153,7 +153,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="col-8">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img src="images/<?=$row['p_image']?>" alt="">
+											<img src="images/<?=$row['inmage']?>" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -162,11 +162,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										</div>
 										<div class="item-info-product text-center border-top mt-4">
 											<h4 class="pt-1">
-												<a href="single.html"><?=$row['p_name']?></a>
+												<a href="single.html"><?=$row['Productname']?></a>
 											</h4>
 											<div class="info-product-price my-2">
-												<span class="item_price">$<?=$row['p_price']?></span>
-												<?php $del = $row['p_price'] + 30?>
+												<span class="item_price">$<?=$row['Price']?></span>
+												<?php $del = $row['Price'] + 30?>
 												<del>$<?php $del?></del>
 											</div>
 										</div>
