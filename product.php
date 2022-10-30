@@ -153,7 +153,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="col-8">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img src="images/<?=$row['inmage']?>" alt="">
+											<img src="images/Igm1.jpg" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<a href="single.html" class="link-product-add-cart">Quick View</a>
