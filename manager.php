@@ -170,8 +170,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- logo -->
 				<div class="col-md-3 logo_agile">
 					<h1 class="text-center">
-						<a href="index.php" class="font-weight-bold font-italic">
-							<img src="images/logo2.png" alt="  " class="img-fluid"> Watch Store
+						<a href="index.html" class="font-weight-bold font-italic">
+							<img src="images/logo2.png" alt=" " class="img-fluid">Electro Store
 						</a>
 					</h1>
 				</div>
@@ -240,7 +240,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="container">
 				<ul class="w3_short">
 					<li>
-						<a href="index.php">Home</a>
+						<a href="index.html">Home</a>
 						<i>|</i>
 					</li>
 					<li>Contact Us</li>
@@ -249,8 +249,69 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!-- //page -->
+	<div id="main">
+        <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+       
+                <div style="text-align: center;" className="page-heading pb-2 mt-4 mb-2 ">
+                    <h1>Manager</h1> 
+                    <a href="insert.php"><button type="button" class="btn btn-outline-primary">Insert</button></a>
+                </div>
+                <div class="page-content">
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
 
-
+                
+        <?php
+            $sql1 = "SELECT * from product";
+            $rel1 = pg_query($conn,$sql1);
+        ?>
+               
+                </div>
+                <div class="container mb-3">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">DetailDesc</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Catogery</th>
+                            <th style="text-align: center;" scope="col" colspan="2">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                while($row = pg_fetch_assoc($rel1) ) {
+                            ?>
+                            <tr id="table">
+                                <td id="table"><?=$row['p_id']?></td>
+                                <td id="table"><?=$row['p_name']?></td>
+                                <td id="table"><?=$row['p_price']?></td>
+                                <td style="text-align: left;"  id="table"><?=$row['DetailDesc']?></td>
+                                <td id="table"><?=$row['p_quantity']?></td>
+                                <td id="table"><?=$row['cat_id']?></td>
+                                <td>
+                                    <a href="update.php?id=<?=$row['p_id']?>" class="btn btn-warning rounded-pill">Update</a> 
+                                </td>
+                                <td>
+                                    <a href="delete.php?id=<?=$row['p_id']?>" class="btn btn-warning rounded-pill">Delete</a> 
+                                </td>
+                            </tr>
+                            <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                <br>
+                <br>
+    </div>
+	
 </body>
 
 </html>
