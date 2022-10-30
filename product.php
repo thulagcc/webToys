@@ -166,8 +166,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											</h4>
 											<div class="info-product-price my-2">
 												<span class="item_price">$<?=$row['Price']?></span>
-												<?php $del = $row['Price'] + 30?>
-												<del>$<?php $del?></del>
+												
+											
 											</div>
 										</div>
 									</div>
