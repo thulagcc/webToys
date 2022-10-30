@@ -146,7 +146,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="small-container">
 			<div class="row">
 				<?php
-				$re = pg_query($conn,"SELECT * FROM product");
+				$re = pg_query($con,"SELECT * FROM product");
 				while($row = pg_fetch_array($re)){
 				?>
 						<!-- first section -->	
