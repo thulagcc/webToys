@@ -136,7 +136,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	<!-- top Products -->
 	<div class="ads-grid py-sm-5 py-4">
-		<body>
+		
 			<!-- tittle heading -->
 			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
 				<span>Watch</span>
